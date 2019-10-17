@@ -2,7 +2,7 @@
  * SPI_Interface.h
  *
  *  Created on: Mar 10, 2019
- *      Author: alx
+ *      Author: Mahmoud Rezk Mahmoud
  */
 
 #ifndef SPI_INTERFACE_H_

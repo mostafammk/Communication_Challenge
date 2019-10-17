@@ -2,7 +2,7 @@
  * SPI_Prog.c
  *
  *  Created on: Mar 10, 2019
- *      Author: alx
+ *      Author: Mahmoud Rezk Mahmoud
  */
 
 #include "Utilize.h"
