@@ -2,19 +2,23 @@
  * UART_Prog.c
  *
  *  Created on: Mar 8, 2019
- *      Author: Mahmoud Rezk
+ *      Author: Mahmoud Rezk Mahmoud
  *      UART Communication protocole Driver
  *      Rev1
  */
 
-
 #include "Utilize.h"
 #include "AVR_UART_REG.h"
 #include "UART_Interface.h"
+#include "REG_Lib.h"
 
-static void (*pvidCallBackPtrRx) (void);
-static void (*pvidCallBackPtrUdr) (void);
-static void (*pvidCallBackPtrTx) (void);
+
+void __vector_13 (void) __attribute__ ((signal,used));
+void __vector_14 (void) __attribute__ ((signal,used));
+void __vector_15 (void) __attribute__ ((signal,used));
+static void (*pvidCallBackPtrRx) (void) = NULL;
+static void (*pvidCallBackPtrUdr) (void) = NULL;
+static void (*pvidCallBackPtrTx) (void) = NULL;
 
 void INTPRx_vidSetCallBack(void(*COPY_pvidCallBackFunction)(void))
 {
@@ -48,7 +52,7 @@ void UART_vidInitialize(void)
 	/*set Baud Rate*/
 	/*the Equation*/
 	#if(UART_OperatingMode==ASNormalMode)
-		Local_u16UBRRValue = ((MCU_ClK/16*UART_u16BaudRate)-1);
+		Local_u16UBRRValue = ((MCU_ClK/(UART_u16BaudRate*16UL))-1);
 	#elif(UART_OperatingMode==ASDoubleMode)
 		SET_BIT(UCSRA,UCSRA_U2X);
 		Local_u16UBRRValue = (MCU_ClK/8*UART_u16BaudRate)-1;
@@ -162,7 +166,7 @@ Description:Recieve word from UART Module
 Inputs: Address of a variable which save the data which received.
 OutPut: NA.
 */
-void UART_vidReceiveWord(uint16 * Copy_Pu16DataWord)
+void UART_vidReceiveWord(uint8 * Copy_Pu16DataWord)
 {
 	/*Wait till Data is received*/
 	while ((GET_BIT(UCSRA,UCSRA_RXC))==0);
@@ -173,6 +177,18 @@ void UART_vidReceiveWord(uint16 * Copy_Pu16DataWord)
 	/*Copy data from UDR*/
 	*Copy_Pu16DataWord = UDR;
 }
+
+
+void UART_sendString(const uint8 *Str)
+{
+	uint8 i = 0;
+	while(Str[i] != '\0')
+	{
+		UART_vidSendWord(Str[i]);
+		i++;
+	}
+}
+
 
 /*
 Description:Send Buffer from UART Module
@@ -196,9 +212,9 @@ void UART_vidRecieveBuffer()
 /***
  * ISR Vector for Rx UART Interrupt
  * */
-void __vector__13(void )
+void __vector_13(void )
 {
-	if(pvidCallBackPtrRx!=0)
+	if(pvidCallBackPtrRx != NULL)
 	{
 		pvidCallBackPtrRx();
 	}
@@ -210,9 +226,9 @@ void __vector__13(void )
 /***
  * ISR Vector for UDR UART Interrupt
  * */
-void __vector__14(void )
+void __vector_14(void )
 {
-	if(pvidCallBackPtrUdr!=0)
+	if(pvidCallBackPtrUdr != NULL)
 	{
 		pvidCallBackPtrUdr();
 	}
@@ -224,9 +240,9 @@ void __vector__14(void )
 /***
  * ISR Vector for Tx UART Interrupt
  * */
-void __vector__15(void )
+void __vector_15(void )
 {
-	if(pvidCallBackPtrTx!=0)
+	if(pvidCallBackPtrTx != NULL)
 	{
 		pvidCallBackPtrTx();
 	}
