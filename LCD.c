@@ -1,3 +1,9 @@
+/*
+ * LCD.c
+ *
+ *  Created on: Sep 20, 2019
+ *      Author: Mahmoud Rezk Mahmoud
+ */
 #include "LCD.h"
 
 void Enable()

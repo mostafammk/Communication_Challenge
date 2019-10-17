@@ -1,9 +1,14 @@
-
+/*
+ * LCD.h
+ *
+ *  Created on: Sep 20, 2019
+ *      Author: Mahmoud Rezk Mahmoud
+ */
 #ifndef LCD_H_
 #define LCD_H_
 
 
-#define F_CPU 16000000ul
+//#define F_CPU 16000000ul
 //#include <avr/io.h>
 #include "REG_Lib.h"
 #include "STD_Types.h"
@@ -17,7 +22,7 @@
 #define EN 3
 #define RW 2
 
-void Enable();
+void Enable(void);
 void CMD_WRT_8bit(uint8 cmd);
 void CMD_WRT_4bit(uint8 cmd);
 void DATA_WRT_8bit(uint8 data);

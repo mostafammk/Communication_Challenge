@@ -1,3 +1,10 @@
+/*
+ * Utilize.h
+ *
+ *  Created on: Mar 8, 2019
+ *      Author: Mahmoud Rezk Mahmoud
+ *      Rev1
+ */
 #ifndef _UTILIZE_H
 #define _UTILIZE_H
 
