@@ -1,9 +1,12 @@
+<<<<<<< HEAD
 /*
  * LCD.c
  *
  *  Created on: Sep 20, 2019
  *      Author: Mostafa Khalil
  */
+=======
+>>>>>>> MC1_LCD
 #include "LCD.h"
 
 void Enable()
@@ -193,4 +196,8 @@ void LCD_NUM_DISP(uint8 row , uint8 col, uint16_t num)
 	
 	}
 		
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> MC1_LCD

@@ -2,7 +2,11 @@
  * STD_Types.h
  *
  *  Created on: Sep 20, 2019
+<<<<<<< HEAD
  *      Author: Mostafa khalil
+=======
+ *      Author: abdelqader
+>>>>>>> MC1_LCD
  */
 
 #ifndef STD_TYPES_H_

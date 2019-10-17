@@ -1,14 +1,22 @@
+<<<<<<< HEAD
 /*
  * LCD.h
  *
  *  Created on: Sep 20, 2019
  *      Author: Mostafa Khalil
  */
+=======
+
+>>>>>>> MC1_LCD
 #ifndef LCD_H_
 #define LCD_H_
 
 
+<<<<<<< HEAD
 //#define F_CPU 16000000ul
+=======
+#define F_CPU 16000000ul
+>>>>>>> MC1_LCD
 //#include <avr/io.h>
 #include "REG_Lib.h"
 #include "STD_Types.h"
@@ -22,7 +30,11 @@
 #define EN 3
 #define RW 2
 
+<<<<<<< HEAD
 void Enable(void);
+=======
+void Enable();
+>>>>>>> MC1_LCD
 void CMD_WRT_8bit(uint8 cmd);
 void CMD_WRT_4bit(uint8 cmd);
 void DATA_WRT_8bit(uint8 data);
