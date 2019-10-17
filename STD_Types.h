@@ -2,7 +2,7 @@
  * STD_Types.h
  *
  *  Created on: Sep 20, 2019
- *      Author: abdelqader
+ *      Author: Mostafa khalil
  */
 
 #ifndef STD_TYPES_H_
