@@ -2,7 +2,11 @@
  * TIMER.c
  *
  *  Created on: Sep 20, 2019
+<<<<<<< HEAD
  *      Author: Mahmoud Rezk Mahmoud
+=======
+ *      Author: alx
+>>>>>>> MC2_TIMER
  */
 #include "TIMER.h"
 #include "Interrupts.h"
@@ -801,15 +805,25 @@ uint8 TIMER_stop(uint8 TIMER_ID)
 }
 
 
+<<<<<<< HEAD
 /*uint8 TIME_Calc(uint8 TIMER_Id,uint8 TIME, void (* ptrcallback)(void))
+=======
+uint8 TIME_Calc(uint8 TIMER_Id,uint8 TIME, void (* ptrcallback)(void))
+>>>>>>> MC2_TIMER
 {
 	static uint8 LOC_Func_Status=OK;
 	static uint8 Loop_index=0;
 	static uint8 TICK_Time=0;
 	static uint32 maxApplicableTickTime=0;
+<<<<<<< HEAD
 	***********************************************************************
 	 * 				Calculating timer tick based on the prescaler
 	 ***********************************************************************
+=======
+	/************************************************************************
+	 * 				Calculating timer tick based on the prescaler
+	 ************************************************************************/
+>>>>>>> MC2_TIMER
 	for(Loop_index=0;Loop_index<NUM_OF_TIMERS;Loop_index++)
 	{
 		switch(TIMER_cnfg_arr[Loop_index].Prescaler)
@@ -840,9 +854,15 @@ uint8 TIMER_stop(uint8 TIMER_ID)
 			break;
 		}
 
+<<<<<<< HEAD
 		***********************************************************************
 		 * 			Calculating the interrupt time and set the call back
 		 ***********************************************************************
+=======
+		/************************************************************************
+		 * 			Calculating the interrupt time and set the call back
+		 ************************************************************************/
+>>>>>>> MC2_TIMER
 		switch(TIMER_cnfg_arr[Loop_index].OC_ChA_Mode)
 		{
 		case NORMAL_MODE:
@@ -902,7 +922,11 @@ uint8 TIMER_stop(uint8 TIMER_ID)
 		Loop_index = MAX_NUM_OF_TIMERS+1;
 	}
 	return LOC_Func_Status;
+<<<<<<< HEAD
 }*/
+=======
+}
+>>>>>>> MC2_TIMER
 
 
 void TIMER0_OVF_setCallBack(void (*COPY_TIMER0_OVF_callBackPtr)(void))

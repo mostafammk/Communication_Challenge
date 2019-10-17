@@ -1,29 +1,25 @@
-/*
- * STD_Types.h
- *
- *  Created on: Sep 20, 2019
- *      Author: abdelqader
- */
-
-#ifndef STD_TYPES_H_
-#define STD_TYPES_H_
-
-typedef unsigned char         uint8;          /*           0 .. 255             */
-typedef signed char           sint8;          /*        -128 .. +127            */
-
-typedef unsigned short        uint16;         /*           0 .. 65535           */
-typedef signed short          sint16;         /*      -32768 .. +32767          */
-
-typedef unsigned long         uint32;         /*           0 .. 4294967295      */
-typedef signed long           sint32;         /* -2147483648 .. +2147483647     */
-
-typedef unsigned long long    uint64;         /*       0..18446744073709551615  */
-typedef signed long long      sint64;
-
-typedef float                 float32;
-typedef double                float64;
-
-typedef enum { NOK, OK } STD_Fun_t;
-
-
-#endif /* STD_TYPES_H_ */
+#ifndef STD_TYPES_h
+#define STD_TYPES_h
+typedef unsigned char uint8;
+typedef signed char sint8;
+typedef unsigned short int uint16;
+typedef signed short int sint16;
+typedef unsigned long int uint32;
+typedef signed long int sint32;
+typedef unsigned long long int uint64;
+typedef signed long long int sint64;
+typedef float float32;
+typedef double float64;
+typedef long double float128;
+typedef unsigned char* pu8;
+typedef signed char* ps8;
+typedef unsigned short int* pu16;
+typedef signed short int* ps16;
+typedef unsigned long int* pu32;
+typedef signed long int* ps32;
+typedef unsigned long long int* pu64;
+typedef signed long long int* ps64;
+typedef float* pf32;
+typedef double* pf64;
+typedef long double* pf128;
+#endif

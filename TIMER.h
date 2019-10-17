@@ -2,7 +2,11 @@
  * TIMER.h
  *
  *  Created on: Sep 20, 2019
+<<<<<<< HEAD
  *      Author: Mahmoud Rezk Mahmoud
+=======
+ *      Author: alx
+>>>>>>> MC2_TIMER
  */
 
 #ifndef TIMER_H_
@@ -59,7 +63,11 @@ extern uint8 TIMER_init(void);
 
 extern uint8 TIMER_start(uint8 TIMER_ID);
 extern uint8 TIMER_stop(uint8 TIMER_ID);
+<<<<<<< HEAD
 /*extern uint8 TIME_Calc(uint8 TIMER_Id,uint8 TIME, void (* ptrcallback)(void));*/
+=======
+extern uint8 TIME_Calc(uint8 TIMER_Id,uint8 TIME, void (* ptrcallback)(void));
+>>>>>>> MC2_TIMER
 
 
 

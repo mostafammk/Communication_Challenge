@@ -2,7 +2,11 @@
  * Interrupts.h
  *
  *  Created on: Sep 20, 2019
+<<<<<<< HEAD
  *      Author: Mahmoud Rezk Mahmoud
+=======
+ *      Author: alx
+>>>>>>> MC2_TIMER
  */
 
 #ifndef INTERRUPTS_H_

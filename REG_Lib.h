@@ -152,6 +152,7 @@
 #define SREG_I 7
 
 
+<<<<<<< HEAD
 //ADDRESS OF GICR "GLOBAL INTERRUPT CONTROL REGISTER"
 #define GICR_ADDRESS 0x5B
 #define GICR (*(volatile uint8 *) GICR_ADDRESS)
@@ -165,6 +166,8 @@
 #define MCUCSR (*(volatile uint8 *) MCUCSR_ADDRESS)
 
 
+=======
+>>>>>>> MC2_TIMER
 #define NULL (void *)0
 
 #endif /* REG_LIB_H_ */
